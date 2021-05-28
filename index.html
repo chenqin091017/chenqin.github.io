@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>
+    
+    CUBE</title>
+  
+  <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<script src="/js/pace.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <main class="content">
+    <section class="jumbotron">
+ 
+</section>
+<div id="landingpage">
+  <section class="outer">
+  <article class="articles">
+    
+    <h1 class="page-type-title"></h1>
+    
+    
+    <article id="post-hello-world" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/05/28/hello-world/">Hello World</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/05/28/hello-world/" class="article-date">
+  <time datetime="2021-05-28T03:00:00.818Z" itemprop="datePublished">2021-05-28</time>
+</a>
+      
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.cubetech.group/2021/05/28/hello-world/" data-id="ckp7r5g590009i0jd1c5b0tyn" class="article-share-link">
+        Share
+      </a>
+      
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-ElasticSearch中文排序问题" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/05/25/ElasticSearch%E4%B8%AD%E6%96%87%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/">ElasticSearch中文排序问题</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/05/25/ElasticSearch%E4%B8%AD%E6%96%87%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/" class="article-date">
+  <time datetime="2021-05-24T16:00:00.000Z" itemprop="datePublished">2021-05-25</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/Elasticsearch/">Elasticsearch</a>
+</div>
+
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <h2 id="1需求"><a href="#1需求" class="headerlink" title="1需求"></a>1需求</h2><p>中文需要根据首字母进行排序比较，而ElasticSearch的排序规则是根据ASCII码，所以从人的感知上是没有任何的顺序规则的。</p>
+<p>另外由于部分字段使用的analyzer使用ngram_analyzer或者ik_analyzer，在满足以上analyzer的同时，则需要使用ElasticSearch中index mapping字段的fields配置，用来不同的方式进行analyzer。</p>
+      
+      <a class="article-more-link" href="/2021/05/25/ElasticSearch%E4%B8%AD%E6%96%87%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/">
+        Read More...
+      </a>
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.cubetech.group/2021/05/25/ElasticSearch%E4%B8%AD%E6%96%87%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/" data-id="ckp7r5g510001i0jdd7hiftsp" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-如何解决Elasticsearch索引数据延迟" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/02/20/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Elasticsearch%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E5%BB%B6%E8%BF%9F/">如何解决Elasticsearch索引数据延迟</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/02/20/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Elasticsearch%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E5%BB%B6%E8%BF%9F/" class="article-date">
+  <time datetime="2021-02-19T16:00:00.000Z" itemprop="datePublished">2021-02-20</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/Elasticsearch/">Elasticsearch</a>
+</div>
+
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <h2 id="出现场景"><a href="#出现场景" class="headerlink" title="出现场景"></a>出现场景</h2><p>前端在调用后台新增的数据之后，立刻调用列表获取接口，但是后台列表获取接口没有返回新增的数据。由于新增的过程都是同步的操作，且对Elasticsearch操作也有成功返回（调用Elasticsearch使用的是开源的工具<a target="_blank" rel="noopener" href="https://github.com/searchbox-io/Jest">JestClient</a>），遇到这个问题百思不得其解，觉得不存在代码问题。所以最大的可能性Elasticsearh存储数据的时候，会不会不是实时的？</p>
+      
+      <a class="article-more-link" href="/2021/02/20/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Elasticsearch%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E5%BB%B6%E8%BF%9F/">
+        Read More...
+      </a>
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.cubetech.group/2021/02/20/%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3Elasticsearch%E7%B4%A2%E5%BC%95%E6%95%B0%E6%8D%AE%E5%BB%B6%E8%BF%9F/" data-id="ckp7r5g5a000ai0jd0ttkf9tv" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-Elasticsearch(2.x)权威指南" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/02/18/Elasticsearch(2.x)%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/">Elasticsearch权威指南(2.x)</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/02/18/Elasticsearch(2.x)%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/" class="article-date">
+  <time datetime="2021-02-17T16:00:00.000Z" itemprop="datePublished">2021-02-18</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/Elasticsearch/">Elasticsearch</a>
+</div>
+
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+    
+    <a class="article-gallery-img" href="/2021/02/18/Elasticsearch(2.x)%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/" rel="gallery_ckp7r5g540003i0jdaczr5sng">
+      <img src="https://bcc-es-prod.oss-cn-hangzhou.aliyuncs.com/im/20200520/091017/u=463240096,4017976753&fm=26&gp=0.jpg" itemprop="image">
+    </a>
+    
+    
+  </div>
+</div>
+
+      
+      <blockquote>
+<p>注意文档中使用的Elasticsearch版本为2.x版本，此次阅读仅是为了较系统的对Elasticsearch进行学习。</p>
+<p>后续再计划对最新版本的文档进行研读；</p>
+<p>本地环境使用的Elasticseach版本为6.8，所在在阅读过程中会对兼容性问题进行解决；</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/cluster-health.html">Elasticsearch权威指南</a></p>
+      
+      <a class="article-more-link" href="/2021/02/18/Elasticsearch(2.x)%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/">
+        Read More...
+      </a>
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.cubetech.group/2021/02/18/Elasticsearch(2.x)%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97/" data-id="ckp7r5g540003i0jdaczr5sng" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Elasticsearch/" rel="tag">Elasticsearch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="tag">读书笔记</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+    <article id="post-mvn deploy将开发后的代码发布到远程仓库" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+
+<h2 itemprop="name">
+  <a class="article-title" href="/2021/02/18/mvn%20deploy%E5%B0%86%E5%BC%80%E5%8F%91%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">mvn deploy将开发后的代码发布到远程仓库</a>
+</h2>
+
+
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/02/18/mvn%20deploy%E5%B0%86%E5%BC%80%E5%8F%91%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" class="article-date">
+  <time datetime="2021-02-17T16:00:00.000Z" itemprop="datePublished">2021-02-18</time>
+</a>
+      
+<div class="article-category">
+  <a class="article-category-link" href="/categories/Maven/">Maven</a>
+</div>
+
+    </div>
+    
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+      <h2 id="出现场景"><a href="#出现场景" class="headerlink" title="出现场景"></a>出现场景</h2><p>在日常开发工作中，会将自己开发的项目发布到nexus，便于项目组中的其他人员能够<code>dependency</code>你开发的jar包，引用你的代码。</p>
+      
+      <a class="article-more-link" href="/2021/02/18/mvn%20deploy%E5%B0%86%E5%BC%80%E5%8F%91%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">
+        Read More...
+      </a>
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.cubetech.group/2021/02/18/mvn%20deploy%E5%B0%86%E5%BC%80%E5%8F%91%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81%E5%8F%91%E5%B8%83%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" data-id="ckp7r5g580007i0jd1oh9ha9p" class="article-share-link">
+        Share
+      </a>
+      
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/" rel="tag">maven</a></li></ul>
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+</article>
+    
+  </article>
+  
+
+  
+</section>
+</div>
+
+    <footer class="footer">
+  <div class="outer">
+    <div class="float-right">
+      <ul class="list-inline">
+  
+  <li><i class="fe fe-bar-chart"></i> <span id="busuanzi_value_site_pv"></span></li>
+  
+  <li><i class="fe fe-smile-alt"></i> <span id="busuanzi_value_site_uv"></span></li>
+  
+</ul>
+    </div>
+    <ul class="list-inline">
+      <li>CUBE &copy; 2021</li>
+      
+        <li></li>
+      
+    </ul>
+  </div>
+</footer>
+  </main>
+  <aside class="sidebar">
+    <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/cubetech.png" alt="CUBE"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">首页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/gallery">相册</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link nav-item-search" title="Search">
+        <i class="fe fe-search"></i>
+        Search
+      </a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      <div class="totop" id="totop">
+  <i class="fe fe-rocket"></i>
+</div>
+    </li>
+    <li class="nav-item">
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+  </aside>
+  
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/copybtn.js"></script>
+
+
+
+
+
+
+<script src="/js/ocean.js"></script>
+
+</body>
+
+</html>
